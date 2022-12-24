@@ -1,0 +1,23 @@
+##here are the code to initialise cloud source repository
+
+
+#enabling apis servicename.googleapis.com
+gcloud services enable sourcerepo.googleapis.com
+gcloud services enable cloudfunctions.googleapis.com
+
+#create repository 
+gcloud source repos create csr-demo
+
+#clone repo into cloud shell/local
+gcloud source repos clone csr-demo
+cd csr-demo
+
+#pull copy of github example into directory
+git pull https://github.com/linuxacademy/content-gcpro-devops-engineer
+
+#push cloned code into csr
+git push origin master
+
+#test and call the function with custom data
+#similar to gcloud source, gcloud functions is used for cloud functions
+gcloud functions call function-1 --data="{\"name\":\"sab\"}" #need to escape character for windows
