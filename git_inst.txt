@@ -1,0 +1,15 @@
+#to change git permissions or to reset the account
+
+#changes the global email and user settings
+git config --global --unset user.name
+git config --global --unset user.email
+git config --global --unset credential.helper
+
+#deletes the default account used to login
+cmdkey /delete:LegacyGeneric:target=git:https://github.com
+
+#before pushing a new code, use:
+git config --global --set user.name
+git config --global --set user.email
+
+#also use the https:// to clone the repo instead of SSH to create a new credential
