@@ -1,0 +1,10 @@
+#Google Cloud Functions are event-driven, serverless functions 
+#that can be triggered either directly by an HTTP call 
+#(with or without arguments, in a variety of formats) 
+#or by specific occurrences, such as a file being uploaded to a targeted Cloud Storage bucket#
+
+
+gcloud services enable run.googleapis.com
+
+#similar to gcloud source, gcloud functions is used for cloud functions
+gcloud functions call function-1 --data="{\"name\":\"sab\"}" #need to escape character for windows
